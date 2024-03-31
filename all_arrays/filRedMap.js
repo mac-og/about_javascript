@@ -12,4 +12,3 @@ let final = numA.reduce((a, b) => a + b);
 // map function performs a function on each of the elements of the array
 let numMap = numA.map(a => a * a);
 console.log(numMap);
-6+54

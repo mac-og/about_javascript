@@ -22,4 +22,4 @@ let numbers = {
 // numbers.five();
 // console.log(numbers);
 // to access the properties use either the dot notation or bracket notation
-console.log(numbers.two); // numbers['two'];
+console.log(numbers.two); // or numbers['two'];

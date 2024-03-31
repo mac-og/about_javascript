@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Timer</title>
+</head>
+<body>
+    <h1>The Time and Date timer</h1>
+    <label id="time"></label>
+
+    <script type="text/javascript">
+    /*
+        setInterval(updateTime, 1000)
+
+        function updateTime() {
+            let timeNow = new Date();
+            document.getElementById('time').innerHTML = nowTime();
+
+            function nowDate(timeNow) {
+                let gday = changeDay(timeNow.getDay());
+                let gdate = timeNow.getDate();
+                let gmonth = timeNow.getMonth();
+                let gyear = timeNow.getFullYear();
+
+            function changeDay(day) {
+                let nameOfDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+                return nameOfDay[day];
+            }
+        }
+        
+        function nowTime() {
+            let gsecs = changeTime(timeNow.getSeconds());
+            let gmins = changeTime(timeNow.getMinutes());
+            let ghrs = changeTime(timeNow.getHours());
+        
+            function changeTime(time) {
+                time = time.toString();
+                return (time.length < 2) ? '0' + time: time;
+            }
+
+            return `${ghrs}:${gmins}:${gsecs}`;
+        }
+    }
+    */
+    let timer = document.getElementById('time');
+    window.addEventListener('load', updateTime);
+
+    function updateTime() {
+        let timeNow = new Date();
+        document.getElementById('time').textContent = nowTime();
+
+        setInterval(updateTime, 1000);
+        function nowTime() {
+            let gsecs = changeTime(timeNow.getSeconds());
+            let gmins = changeTime(timeNow.getMinutes());
+            let ghrs = changeTime(timeNow.getHours());
+        
+        function changeTime(time) {
+            time = time.toString();
+            return (time.length < 2) ? '0' + time: time;
+            }
+            return `${ghrs}:${gmins}:${gsecs}`;
+        }
+    }
+    </script>
+</body>
+</html>

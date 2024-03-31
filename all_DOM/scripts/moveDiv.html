@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <style type="text/css">
+        #later {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introduction</h1>
+    <p>This is a redirection site</p>
+    <div id="later"></div>
+
+    <script type="text/javascript">
+        let sel = document.getElementById('later');
+        window.addEventListener("load", update);
+
+        function moveHorizontal() {
+            let x = 0;
+            let y = 0;
+            let clear = setInterval(() => {
+                y += 5;
+                sel.style.top = y + "px";
+                if (y >= 20)
+                    clearInterval(clear)
+            }, 1000);
+        }
+
+        function rotate() {
+            // let clear = null;
+            let y = 0;
+            clear = setInterval(() => {
+                if (y >= 360)
+                    clearInterval(clear)
+                else {
+                    y += 1;
+                    sel.style.transform = "rotateX("+y+"deg)"
+                }
+            }, 10);
+            }
+    </script>
+</body>
+</html>

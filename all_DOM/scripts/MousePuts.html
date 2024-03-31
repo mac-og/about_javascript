@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About mouse manipulation</title>
+    <style type="text/css">
+        h1 {
+            /* background-color: #eeeeee; */
+            color: #666666;
+            text-shadow: 1px 1px 0px #000000;
+            text-decoration: underline;
+            /* text-decoration: underline; */
+        }
+        body {
+            text-align: center;
+            max-width: 850px;
+            min-width: 350px;
+            /* width: 850px; */
+            margin: 0px auto 0px auto;
+        }
+        #all {
+            border: 2px solid black;
+            background-color: #dcdcdc;
+
+        }
+        h2, p {
+            text-align: left;
+            padding: 0px 10px 0px 10px;
+        }
+        p {
+            /* font-size: 120%; */
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .paraInc {
+            font-size: 120%;
+        }
+        .paraDec {
+            font-size: 100%;
+        }
+        #form {
+            text-align: left;
+            /* font-size: 120%; */
+            /* color: lighty; */
+        }
+        #food, #class, #enlargeFont, #originalFont {
+            padding: 2px 5px 2px 5px;
+            margin-bottom: 2px;
+        }
+        #determine {
+            text-decoration: underline;
+        }
+        #typeFood {
+            font-style: oblique;
+            font-weight: bold;
+        }
+        #enlargeFont:hover, #originalFont:hover {
+            background-color: lightseagreen;
+            cursor: pointer;
+        }
+        #con:hover {
+            color: lightseagreen;
+        }
+        #win:hover {
+            cursor: pointer;
+            color: lightseagreen;
+        }
+        #win {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body onload="preLoadImages();">
+    <div id="all">
+    <div id="d1">
+    <h1>Introduction</h1>
+    <h2>About mouseOver and mouseOut</h2>
+    <p>This section deals with the use of <b>mouseOver</b> and <b>mouseOut</b>.<br />
+        It is basically used to manipulate images or texts alike, it changes the image when
+        the mouse hovers the image and returns the original image upon the removal of the mouse.<br />
+        <br />
+        The image below is an example using the <b>onmouseover</b> and <b>onmouseout</b>.
+    </p>
+    <figure>
+        <img src="../images/windows.jpg" alt="windows logo" id="image" title="Logo OS" 
+        width="250px" height="250px" onmouseover="swapImage('image', '../images/applelogo.png')"
+        onmouseout="swapImage('image', '../images/windows.jpg')"/>
+        <figcaption id="fig">
+            This is the logo for the windows operating system.
+        </figcaption>
+    </figure>
+    </div>
+    <div id="d2">
+    <h2>About onFocus and onBlur when used in a form</h2>
+    <p>The <b>onFocus</b> and <b>onBlur</b> are used in javascript when a uer clicks a form to fill 
+    and a different layout is shown when the user clicks the box as compared to when the focus is 
+    not on the box</p>
+    <form action="#" method="post" id="form">
+        <p><span id="determine">To determine the class a food belongs</span> <br />
+        Example: select from these options, you just have to input the name of food and the corresponding
+        value of the class of food appears: <span id="typeFood">Meat, Rice, Yam, Tomato, Apple, Fish</span></p> 
+        <p>
+        <label id="first">Name of food:
+            <input type="text" name="food" id="food" onfocus="toYellow('food');" onblur="toWhite('food'); fillClass();" 
+            placeholder="Insert food..." />
+        </label id="second"> <br />
+        <label>Class of food:
+            <input type="text" name="class" id="class" onfocus="toYellow('class');" onblur="toWhite('class');" />
+        </label> <br />
+        <button id="submit" type="button">Submit</button>
+        </p>
+    </form>
+    </div>
+    <div id="d3">
+        <h2>About Completing a text</h2>
+        <p>When a text is too long or considered not neccessary, a link is given so that a user can click on it
+            and the enlarge form on the text is displayed. it is useful as it helps to keep only text that are 
+            considered needful unless needed by the user.
+        </p>
+        <p>Solid Materials: <br / >
+            <span id="enlarge">Solid materials have been conveniently grouped into three basic classifications: metals, ceramics, 
+            and polymers. This scheme is based primarily on <i><a href="javascript:void(0);" id="con" onclick="enlarge()" >continue</a></i>
+        </span>
+        </p>
+    </div>
+    <div id="d4">
+        <h2>Enlarging font size for text in paragraphs using the tagName</h2>
+        <p>You can make use of a button, so that if a user prefers to increase the font size the option is made available <br />
+        Click to Enlarge the paragraphs: <button id="enlargeFont" onclick="increaseParagraph();">Enlarge Font</button> <br />
+        Click to Revert back to original: <button id="originalFont" onclick="decreaseParagraph();">Original Font</button></p>
+    </div>
+    <div id="d5">
+        The continuation, click this <span id="win" onclick="loadImg();">link</span>
+    </div>
+    <div id="d6">
+        The other continuation, click this <span id="win" onclick="printPage();">link</span> to continue
+    </div>
+    <div id="d6">
+        The continuation, click this <span id="win" onclick="closePage();">link</span> to continue
+    </div>
+    </div>
+    <script type="text/javascript">
+
+        function swapImage(id, imgSrc) {
+            document.getElementById(id).src = imgSrc;
+            changeFigcaption(imgSrc);
+
+            function changeFigcaption(arg) {
+                let imgSrcSplit = arg.split('/');
+                
+                if (imgSrcSplit.includes('applelogo.png'))
+                    document.getElementById('fig').innerHTML = `This is the logo for apple OS.`
+                else if (imgSrcSplit.includes('windows.jpg'))
+                    document.getElementById('fig').innerHTML = `This is the logo for the windows operating system.`
+            }
+        }
+
+        function toYellow(id) {
+            document.getElementById(id).style.backgroundColor = 'lightyellow';
+        }
+        function toWhite(id) {
+            document.getElementById(id).style.backgroundColor = 'white';
+        }
+
+        function fillClass() {
+            let NameOfFood = document.getElementById('food').value;
+            NameOfFood = NameOfFood.toLowerCase();
+            let result;
+
+            switch(NameOfFood) {
+                // Meat, Rice, Yam, Tomato, Apple, Fish
+                case 'meat' || 'fish':
+                    result = 'Protein';
+                    break;
+                case 'rice' || 'Yam':
+                    result = 'Cabonhydrate';
+                    break;
+                case 'tomato' || 'apple':
+                    result = 'Vitamins';
+                    break;
+                default:
+                    result = 'Nil';
+            }
+            document.getElementById('class').value = result;
+        }
+
+        function enlarge() {
+            let sentence = `Solid materials have been conveniently grouped into three basic classifications: metals, ceramics, 
+            and polymers. This scheme is based primarily on chemical makeup and atomic structure, and most 
+            materials fall into one distinct grouping or another, although there are some intermediates`;
+
+            document.getElementById('enlarge').innerHTML = sentence;
+        }
+
+        function increaseParagraph() {
+            let p1 = document.getElementsByTagName('p');
+            for (let i = 0; i < p1.length; ++i)
+                p1[i].className = "paraInc";
+        }
+        function decreaseParagraph() {
+            let p1 = document.getElementsByTagName('p');
+            for (let i = 0; i < p1.length; ++i)
+                p1[i].className = "paraDec";
+        }
+
+    </script>
+    <script type="text/javascript" src="../scripts/browserWindows.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converting Temperature to degree</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+        #first {
+            width: 850px;
+            background-color: #dcdcde;
+            margin: 10px auto 10px auto;
+            padding: 10px;
+        }
+        h1 {
+            /* background-color: #eeeeee; */
+            color: #666666;
+            text-shadow: 1px 1px 0px #000000;
+            /* text-decoration: underline; */
+        }
+        h2 {
+            color: #666666;
+            text-shadow: 1px 1px 0px #000000;
+            /* text-decoration: underline; */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            font-size: 120%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: justify;
+        }
+        #blue {
+            color: blueviolet;
+        }
+        #result {
+            color: red;
+            font-size: 130%;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+    <h1>Converting a basic Temperature to <i>Celsius</i> or <i>Fahrenheit</i></h1>
+    <p>To convert a simple Temperature to either `Celsius` or `Fahrenheit`, a text 
+        box is given to input the number to be convert, then you will be required to
+        select the desired degree to convert the temperature to and the equivalent 
+        value in the desired degree will be shown.
+    </p>
+    <h2>Selection options</h2>
+    <p id="second"><span id="blue">Please type in the Temperature </span><br />
+        Temperature: <input type="text" name="temperature" id="value" /><br />
+        <label><input type="radio" name="temp" id="celsius" value="celsius"/>
+            Celsius</label> <br />
+        <label><input type="radio" name="temp" id="fahrenheit" value="fahrenheit"/>
+                Fahrenheit</label> <br />
+        <button type="button" id="submit">Submit</button>
+    </p>
+    <label id="result"></label>
+    </div>
+    <script type="text/javascript" src="./tempToDegree.js"></script>
+</body>
+</html>

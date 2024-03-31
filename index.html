@@ -1,20 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My website</title>
-</head>
-<body>
-    <h1>Introduction</h1>
-    <p>This is a continuation of my learning process</p>
-    <form method="get" action="" >
-        Input Name: <input type="text" name="input" id="l1" /><br />
-        <input type="button" value="submit" id="l2" />
-    </form>
-    <label id="later"></label>
+<html>
+	<head>
+		<title>Homepage</title>
+		<style type="text/css">
+			* {
+				background-color: silver;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: 20px;
+			}
+			p {
+				padding: 20px;
+			}
+			h1 {
+				font-family: Georgia, Times, serif;
+ 				font-size: 250%;
+				background-color: hsl(0, 0%, 100%);
+				background-color: #ffffff80;
+ 				text-shadow: 4px 5px 8px rgba(102, 102, 102, 0.529);
+			}
+			#fig {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+	<h1 id="top">This is the Main Home Page of the website !!!</h1>
+	<p id="cap">You are welcome to the official website fo greatness<br />
+	While you go through the pages of the website, i will like to take out
+	time to thank you for visiting the website and to encourage you to do
+	well to visit this website regularly as it will benefit you in ways you
+	cannot imagine as the tips you will be learning from this site will help
+	you onn your journey to greatness</p>
+	<p>When you want to make images appear on the screen of the browser, you 
+		can make use of an array and iterate over it making the images to appear
+		on the screen.
+		<figure id="fig">
+			<img src="all_DOM/images/iphone.jpg" alt="phone" id="phone" />
+			<figcaption>
+				The image representation of the logo of different phone brands
+			</figcaption>
+		</figure>
+	</p>
+	<hr />
+	<h2>This right here is a sub_header to the amazing introduction to your 
+		journey to greatness</h2>
+	<p>Please click on any of the links from below you will like to visit.
+	<div id="intro">
+	<ul>
+		<li><a href="index.html">Homepage</a></li>
+		<li><a href="services.html">Our Services</a></li>
+		<li><a href="about.html">About Us</a></li>
+		<li><a href="yes/index.html" target=_blank>Yes page</a></li>
+		<a href="#ref">To go to the reference section</a>
+	</ul>
+	</div>
+	This is after listing the links you can visit from website to another
+	web page on the same site</p>
+	<hr />
+	<h3>This is the sub-sub-header</h3>
+	<p>This is just where i get to use the semantic style of text
+	manipulation</p>
+	<ol>
+		<li>The first stage</li>
+		<li>The second stage</li>
+		<li>The last stage
+			<ul>
+				<li>first sub-last</li>
+				<li>second sub-last</li>
+			</ul>
+		</li>
+		<li>An addition</li>
+	</ol>
+	<p>This is using the definition list style</p>
+	<dl>
+		<dt>Man</dt>
+		<dd>The adult of a young boy</dd>
+		<dt>Woman</dt>
+		<dd>The mature nature of a young girl</dd>
+		<dt>Boy</dt>
+		<dt> Girl</dt>
+		<dd>This is a young person</dd>
+	</dl>
+	<hr />
+	<h3>The continuation to greatness</h3>
+	<p> This is you continuing which i find a little bit facinating because
+	you made it this far and it is encouraging.<br />
+	This is the testing of the in-line link to see if it will work. Please
+	do well to visit <a href="yes/index.html">yes</a> page of the website. Please
+	continue to browse through the pages of the website to enjoy its full
+	content</p>
+	<p>This part is about quotation and other parts of the semantic usage of
+	text manipulation. There are basically two types of quotaion usage:</p>
+	<p>This right here is the in_line quotaion usage: <q>It pays to be good
+	 all the time and i concur</q></p>
+	<blockquote>
+		<p>this type of qoutation makes use of the entire paragaph for 
+		its quatation, which is actually <b>nice</b>.</p>
+	</blockquote>
+	<p> The other usage of SEmantic usage is <i>actually very good</i> 
+	, I hope you notice the italic usage. this is the <strong>Strong and 
+	good usage</strong> along with the emphasis usage which is used in <em> 
+	This way to emphasize</em> on a word in a sentence<br />
+	This right here is the usage of the definition semantic sytle of text 
+	usage <dfn>Semantic</dfn> is actually a type of text manipulation that 
+	does not actually affect the structure of the text. this is <del>not 
+	good</del> being replaced with <ins>good</ins>, which is just basically 
+the usage of del & ins and dont forget the usage of <s>to strike out a line</s>. The use of Cite is also included in this section
+	 <cite>The good old days</cite>.
+	</p>
+	<address>
+		<a href="facebook.com">Facebook</a><br />
+			<a href="twitter.com">Twitter</a>
+	</address>
+	<p>this is the use of the Markdown `systematically thinking`, checking 
+	if it will work in html</p>
+	<h3 id="ref">the use of reference on the same page</h3>
+	<p>Click in this <a href="#top">top</a> botton to retuen to the 
+	beginning of the web page</p>
 
-    <script language="javascript" type="text/javascript" src="./practice.js">
-    </script>
-</body>
-</html>
+	<script type="text/javascript" src="all_DOM/scripts/browserWindows.js">
+		window.close();
+	</script>
+
+	</body>
+	</html>

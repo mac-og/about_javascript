@@ -14,8 +14,9 @@ arr.pop();
 // console.log(arr);
 
 // Removing or adding elements anywhere
+// splice - returns an array, original array is affected
 const qaz = [10, 20, 'one', 'two', 30, 50];
-// let sec = qaz.splice(2, 1); // 'one'
+// let sec = qaz.splice(2, 1); // ['one']
 qaz.splice(2, 1, 'add1', 'add2');
 // console.log(qaz); // [10, 20, 'add1', 'add2', 'two', 30, 50];
 

@@ -1,4 +1,6 @@
 // basic function that compares two numbers
+let numbers = [20, 14, 2, 6, 27, 9];
+
 function findMax(a, b) {
     let result = a > b ? a: b;
     return result;
@@ -6,7 +8,6 @@ function findMax(a, b) {
 // console.log(findMax(20, 14));
 
 // to find maximum value in an array of numbers
-let numbers = [20, 14, 2, 6, 27, 9];
 
 function findMaxArray(value) {
     let maximum = value[0];
@@ -28,5 +29,5 @@ let big = Math.max(15, 29);
 let final = Math.max(...numbers);
 
 // using the Array.prototypr.reduce method
-let res = arr.reduce((a, b) => (a > b) ? a: b);
+let res = numbers.reduce((a, b) => (a > b) ? a: b);
 
