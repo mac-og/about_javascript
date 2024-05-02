@@ -29,7 +29,7 @@ const colors = [
 ]
 
 let was = colors.find(obj => obj.color === 'red');
-// console.log(was);
+console.log(was); // { color: 'red', size: 3 }
 
 // split and join method
 let word = "This is javascript language";
@@ -82,5 +82,6 @@ function countOccurance(array, searchNumber) {
      * array.reduce((accumulator, current) {
         const final = (current === searchNumber) ? 1: 0;
         return accumulator + final;
-     }, 0)
+    }, 0)
+    */
 }
